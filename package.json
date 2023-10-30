@@ -1,5 +1,5 @@
 {
-  "name": "pg-mem",
+  "name": "@saad/pg-mem",
   "version": "0.0.1",
   "description": "A memory version of postgres",
   "main": "index.js",
