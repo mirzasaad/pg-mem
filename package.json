@@ -1,6 +1,6 @@
 {
   "name": "pg-mem",
-  "version": "2.7.1",
+  "version": "0.0.1",
   "description": "A memory version of postgres",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "build:deno": "node ./tools/deno-transpile.js --copy && node ./tools/deno-transpile.js --process",
     "cover": "cross-env NODE_ENV=coverage nyc --reporter=lcov --reporter=text npm run test"
   },
-  "author": "Olivier Guimbal",
+  "author": "Olivier Guimbal | Saad Mirza",
   "repository": "https://github.com/oguimbal/pg-mem",
   "issues": "https://github.com/oguimbal/pg-mem/issues",
   "keywords": [
