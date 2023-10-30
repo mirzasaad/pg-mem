@@ -1,6 +1,6 @@
 {
   "name": "@saaaad/pg-mem",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A memory version of postgres",
   "main": "index.js",
   "scripts": {
