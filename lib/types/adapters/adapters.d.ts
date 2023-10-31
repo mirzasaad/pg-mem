@@ -1,9 +1,13 @@
-import { LibAdapters, IMemoryDb } from '../interfaces';
+import { LibAdapters, IMemoryDb } from "../interfaces";
 export declare class Adapters implements LibAdapters {
     private db;
     private _mikroPatched?;
     constructor(db: IMemoryDb);
     createPg(queryLatency?: number): {
+        Pool: any;
+        Client: any;
+    };
+    createDrizzlePg(queryLatency?: number): {
         Pool: any;
         Client: any;
     };
