@@ -1,12 +1,12 @@
-import { IMigrate } from './migrate/migrate-interfaces';
-import { TableConstraint, CreateColumnDef, NodeLocation, DataTypeDef, FunctionArgumentMode, BinaryOperator, Statement } from 'pgsql-ast-parser';
+import { IMigrate } from "./migrate/migrate-interfaces";
+import { TableConstraint, CreateColumnDef, NodeLocation, DataTypeDef, FunctionArgumentMode, BinaryOperator, Statement } from "pgsql-ast-parser";
 export declare type nil = undefined | null;
 export declare type Schema = {
     name: string;
     fields: SchemaField[];
     constraints?: TableConstraint[];
 };
-export interface SchemaField extends Omit<CreateColumnDef, 'dataType' | 'kind' | 'name'> {
+export interface SchemaField extends Omit<CreateColumnDef, "dataType" | "kind" | "name"> {
     type: IType | DataType;
     name: string;
     serial?: boolean;
@@ -102,7 +102,7 @@ export interface IMemoryDb {
     getTable<T = any>(table: string): IMemoryTable<T>;
     getTable<T = any>(table: string, nullIfNotFound?: boolean): IMemoryTable<T> | null;
     /** Subscribe to a global event */
-    on(event: 'query', handler: (query: string) => any): ISubscription;
+    on(event: "query", handler: (query: string) => any): ISubscription;
     on(event: GlobalEvent, handler: () => any): ISubscription;
     on(event: GlobalEvent, handler: () => any): ISubscription;
     /** Subscribe to an event on all tables */
@@ -169,6 +169,10 @@ export interface IBackup {
 export interface LibAdapters {
     /** Create a PG module that will be equivalent to require('pg') */
     createPg(queryLatency?: number): {
+        Pool: any;
+        Client: any;
+    };
+    createDrizzlePg(queryLatency?: number): {
         Pool: any;
         Client: any;
     };
@@ -301,8 +305,8 @@ export interface FieldInfo {
     name: string;
     type: DataType;
 }
-export declare type TableEvent = 'seq-scan';
-export declare type GlobalEvent = 'query' | 'query-failed' | 'catastrophic-join-optimization' | 'schema-change' | 'create-extension';
+export declare type TableEvent = "seq-scan";
+export declare type GlobalEvent = "query" | "query-failed" | "catastrophic-join-optimization" | "schema-change" | "create-extension";
 export interface IMemoryTable<T = unknown> {
     readonly name: string;
     readonly primaryIndex: IndexDef | nil;
