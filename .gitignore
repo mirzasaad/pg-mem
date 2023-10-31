@@ -3,5 +3,4 @@ output
 .nyc_output
 coverage
 dist
-lib
-lib-types
+
